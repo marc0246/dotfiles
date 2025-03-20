@@ -48,7 +48,7 @@
       "punctuation" = { fg = gray53; };
       "punctuation.delimiter" = { fg = brightBlue; };
       "string" = { fg = brightViolet; };
-      "special" = { fg = brightYellow; };
+      "special" = { fg = brightCyan; };
       "tag" = { fg = darkCyan; };
       "type" = { fg = cyan; };
       "variable" = { fg = gray53; };
@@ -90,7 +90,7 @@
       "ui.popup" = { fg = gray53; bg = gray11; };
       # "ui.popup.info" = {  };
       "ui.text" = { fg = gray53; };
-      "ui.text.focus" = { fg = gray77; };
+      "ui.text.focus" = { bg = gray23; };
       "ui.virtual.ruler" = { bg = gray17; };
       "ui.virtual.whitespace" = { fg = gray20; };
       "ui.virtual.indent-guide" = { fg = gray20; };
