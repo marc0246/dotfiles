@@ -2,6 +2,14 @@
   programs.helix = {
     enable = true;
     defaultEditor = true;
+    languages = {
+      language-server.rust-analyzer = {
+        command = "rust-analyzer";
+        config = {
+          rust-analyzer.check.command = "clippy";
+        };
+      };
+    };
     settings = {
       theme = "city-lights";
       editor = {
