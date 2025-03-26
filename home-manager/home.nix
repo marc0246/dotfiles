@@ -16,6 +16,7 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
+    clang
     coreutils
     ffmpeg
     gdb
@@ -27,6 +28,7 @@
     inkscape
     jq
     libreoffice
+    mold
     mpv
     obs-studio
     pavucontrol
@@ -36,6 +38,26 @@
     unzip
     zip
   ];
+
+  home.file."${config.home.homeDirectory}/.cargo/config.toml".text = ''
+    [build]
+    target-dir = "${config.home.homeDirectory}/.cargo/target"
+
+    [target.x86_64-unknown-linux-gnu]
+    linker = "${pkgs.clang}/bin/clang"
+    rustflags = [
+      "-Clink-arg=-fuse-ld=${pkgs.mold}/bin/mold",
+      "-Clink-arg=-Wl,--no-rosegment",
+      "-Ctarget-cpu=native",
+    ]
+
+    [profile.dev.build-override]
+    opt-level = 3
+    codegen-units = 1
+
+    [profile.dev.package."*"]
+    debug = "line-tables-only"
+  '';
 
   gtk = {
     enable = true;
