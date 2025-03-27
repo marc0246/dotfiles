@@ -57,6 +57,9 @@
 
     [profile.dev.package."*"]
     debug = "line-tables-only"
+
+    [profile.rust-analyzer]
+    inherits = "dev"
   '';
 
   gtk = {

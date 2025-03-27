@@ -7,6 +7,7 @@
         command = "rust-analyzer";
         config = {
           rust-analyzer.check.command = "clippy";
+          rust-analyzer.checkOnSave.extraArgs = [ "--profile" "rust-analyzer" ];
         };
       };
     };
