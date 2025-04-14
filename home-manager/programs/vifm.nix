@@ -27,6 +27,8 @@
       endif
       set statusline="  %=%A %10u:%-7g %15s %20d  "
 
+      nnoremap x :!cargo run --bin %c<cr>
+
       highlight Win             cterm=none              ctermfg=lightwhite ctermbg=default
       highlight Directory       cterm=bold              ctermfg=blue       ctermbg=default
       highlight Link            cterm=bold              ctermfg=cyan       ctermbg=default
