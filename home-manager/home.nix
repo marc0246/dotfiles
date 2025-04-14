@@ -18,6 +18,7 @@
   home.packages = with pkgs; [
     clang
     coreutils
+    discord
     ffmpeg
     gdb
     gimp
