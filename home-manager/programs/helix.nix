@@ -93,9 +93,7 @@
       "ui.statusline.insert" = { fg = gray14; bg = brightBlue; };
       "ui.statusline.normal" = { fg = gray53; bg = gray11; };
       "ui.statusline.select" = { fg = gray14; bg = brightRed; };
-      # "ui.picker.header" = {  };
-      # "ui.picker.header.column" = {  };
-      # "ui.picker.header.column.active" = {  };
+      "ui.picker.header.column.active" = { fg = gray77; };
       "ui.popup" = { fg = gray53; bg = gray11; };
       # "ui.popup.info" = {  };
       "ui.text" = { fg = gray53; };
