@@ -18,7 +18,6 @@
         bufferline = "always";
         color-modes = true;
         completion-trigger-len = 1;
-        completion-replace = true;
         cursorline = true;
         gutters = {
           layout = [ "diff" "spacer" "diagnostics" "spacer" "line-numbers" "spacer" "spacer" ];
