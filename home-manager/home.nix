@@ -36,6 +36,7 @@
     qbittorrent
     ripgrep
     slurp
+    ungoogled-chromium
     unzip
     zip
   ];
