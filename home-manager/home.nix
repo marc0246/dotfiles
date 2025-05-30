@@ -38,6 +38,7 @@
     slurp
     ungoogled-chromium
     unzip
+    wireguard-tools
     zip
   ];
 
