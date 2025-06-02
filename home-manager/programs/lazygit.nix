@@ -2,6 +2,7 @@
   programs.lazygit = {
     enable = true;
     settings = {
+      autoForwardBranches = "none";
       git = {
         paging = {
           colorArg = "always";
