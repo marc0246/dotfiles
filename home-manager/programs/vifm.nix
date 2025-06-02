@@ -27,6 +27,7 @@
       endif
       set statusline="  %=%A %10u:%-7g %15s %20d  "
 
+      nnoremap w :view<cr>
       nnoremap x :!cargo run --bin %c<cr>
 
       highlight Win             cterm=none              ctermfg=lightwhite ctermbg=default
