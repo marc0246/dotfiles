@@ -29,6 +29,16 @@
         };
         line-number = "relative";
         rulers = [ 101 ];
+        statusline = {
+          right = [
+            "diagnostics"
+            "selections"
+            "primary-selection-length"
+            "register"
+            "position"
+            "file-encoding"
+          ];
+        };
         text-width = 100;
       };
       keys.normal = {
