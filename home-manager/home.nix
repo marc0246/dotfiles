@@ -33,6 +33,7 @@
     mpv
     obs-studio
     pavucontrol
+    prismlauncher
     qbittorrent
     ripgrep
     slurp
