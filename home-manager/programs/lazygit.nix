@@ -2,8 +2,8 @@
   programs.lazygit = {
     enable = true;
     settings = {
-      autoForwardBranches = "none";
       git = {
+        autoForwardBranches = "none";
         paging = {
           colorArg = "always";
           pager = "${pkgs.delta}/bin/delta --paging=never";
