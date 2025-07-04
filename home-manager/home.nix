@@ -79,6 +79,13 @@
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnfreePredicate = _: true;
 
+  programs.direnv = {
+    enable = true;
+    config = {
+      whitelist.prefix = [ "/" ];
+    };
+  };
+
   programs.home-manager.enable = true;
 
   services.gnome-keyring.enable = true;
