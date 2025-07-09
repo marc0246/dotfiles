@@ -1,4 +1,20 @@
-{ inputs, outputs, config, lib, pkgs, ... }: {
+{ inputs, outputs, config, lib, pkgs, ... }: let
+  lldbDapRustcPrimer = pkgs.writeScriptBin "lldb_dap_rustc_primer.py" ''
+    import subprocess
+    import pathlib
+    import lldb
+
+    # Determine the sysroot for the active Rust interpreter.
+    sysroot = pathlib.Path(subprocess.getoutput('rustc --print sysroot'))
+    rustlib_etc = sysroot / 'lib' / 'rustlib' / 'etc'
+    if not rustlib_etc.exists():
+        raise RuntimeError('Unable to determine rustc sysroot')
+
+    # Load lldb_lookup.py and execute lldb_commands with the correct path.
+    lldb.debugger.HandleCommand(f"""command script import "{rustlib_etc / 'lldb_lookup.py'}" """)
+    lldb.debugger.HandleCommand(f"""command source -s 0 "{rustlib_etc / 'lldb_commands'}" """)
+  '';
+in {
   programs.helix = {
     enable = true;
     defaultEditor = true;
@@ -10,6 +26,29 @@
           rust-analyzer.check.extraArgs = [ "--profile" "rust-analyzer" ];
         };
       };
+      language = [
+        {
+          name = "rust";
+          debugger = {
+            name = "lldb-dap";
+            transport = "stdio";
+            command = "${pkgs.lldb}/bin/lldb-dap";
+            templates = [
+              {
+                name = "binary";
+                request = "launch";
+                completion = [ { name = "binary"; completion = "filename"; } ];
+                args = {
+                  program = "{0}";
+                  initCommands = [
+                    "command script import ${lldbDapRustcPrimer}/bin/lldb_dap_rustc_primer.py"
+                  ];
+                };
+              }
+            ];
+          };
+        }
+      ];
     };
     settings = {
       theme = "city-lights";
