@@ -149,7 +149,6 @@ in {
       "ui.popup" = { fg = gray53; bg = gray11; };
       # "ui.popup.info" = {  };
       "ui.text" = { fg = gray53; };
-      "ui.text.focus" = { bg = gray23; };
       "ui.virtual.ruler" = { bg = gray17; };
       "ui.virtual.whitespace" = { fg = gray20; };
       "ui.virtual.indent-guide" = { fg = gray20; };
