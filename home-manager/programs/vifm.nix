@@ -30,6 +30,18 @@
       nnoremap w :view<cr>
       nnoremap x :!cargo run --bin %c<cr>
 
+      if $WAYLAND_DISPLAY != ""
+        if executable('wl-copy')
+          nnoremap yd :!echo -n %d | wl-copy %i && echo -n %d | wl-copy -p %i<cr>
+          nnoremap yf :!echo -n %c:p | wl-copy %i && echo -n %c:p | wl-copy -p %i<cr>
+        endif
+      elseif $DISPLAY != ""
+        if executable('xclip')
+          nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>
+          nnoremap yf :!echo -n %c:p | xclip -selection clipboard %i<cr>
+        endif
+      endif
+
       highlight Win             cterm=none              ctermfg=lightwhite ctermbg=default
       highlight Directory       cterm=bold              ctermfg=blue       ctermbg=default
       highlight Link            cterm=bold              ctermfg=cyan       ctermbg=default
