@@ -99,11 +99,6 @@ in {
       "keyword.directive" = { fg = gray53; };
       "keyword.storage.modifier" = { fg = darkCyan; };
       "label" = { fg = cyan; };
-      "markup" = { fg = gray53; };
-      "markup.bold" = { modifiers = [ "bold" ]; };
-      "markup.heading" = { fg = gray77; };
-      "markup.italic" = { modifiers = [ "italic" ]; };
-      "markup.strikethrough" = { modifiers = [ "crossed_out" ]; };
       "namespace" = { fg = cyan; };
       "operator" = { fg = brightBlue; };
       "punctuation" = { fg = gray53; };
