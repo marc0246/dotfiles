@@ -44,6 +44,7 @@
       inactive_tab_background = gray08;
       inactive_tab_foreground = gray53;
       placement_strategy = "top-left";
+      scrollback_lines = 10000;
       selection_background = gray20;
       selection_foreground = "none";
       tab_bar_background = gray08;
