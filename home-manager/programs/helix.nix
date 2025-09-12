@@ -68,6 +68,7 @@ in {
         };
         line-number = "relative";
         rulers = [ 101 ];
+        smart-tab.enable = false;
         statusline = {
           right = [
             "diagnostics"
