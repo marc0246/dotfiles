@@ -84,6 +84,7 @@
     config = {
       whitelist.prefix = [ "/" ];
     };
+    nix-direnv.enable = true;
   };
 
   programs.home-manager.enable = true;
