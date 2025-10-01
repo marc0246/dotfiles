@@ -24,6 +24,7 @@ in {
         config = {
           rust-analyzer.check.command = "clippy";
           rust-analyzer.check.extraArgs = [ "--profile" "rust-analyzer" ];
+          rust-analyzer.imports.prefix = "self";
         };
       };
       language = [
