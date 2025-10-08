@@ -35,6 +35,7 @@
     pavucontrol
     prismlauncher
     qbittorrent
+    renderdoc
     ripgrep
     slurp
     ungoogled-chromium
