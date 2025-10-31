@@ -16,6 +16,7 @@
   home.stateVersion = "24.11";
 
   home.packages = with pkgs; [
+    alacritty
     clang
     coreutils
     discord
