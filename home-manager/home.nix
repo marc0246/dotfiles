@@ -17,6 +17,7 @@
 
   home.packages = with pkgs; [
     alacritty
+    anki
     clang
     coreutils
     discord
