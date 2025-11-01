@@ -28,6 +28,7 @@
     fira-code
     fira-sans
     nerd-fonts.symbols-only
+    noto-fonts-cjk-sans
   ];
 
   hardware.bluetooth = {
