@@ -15,6 +15,13 @@
       };
       search = {
         default = "ddg";
+        engines = {
+          youtube = {
+            name = "YouTube";
+            urls = [{ template = "https://www.youtube.com/results?search_query={searchTerms}"; }];
+            definedAliases = [ "@yt" ];
+          };
+        };
         force = true;
       };
       settings = {
