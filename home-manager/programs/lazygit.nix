@@ -4,10 +4,10 @@
     settings = {
       git = {
         autoForwardBranches = "none";
-        paging = {
+        pagers = [{
           colorArg = "always";
           pager = "${pkgs.delta}/bin/delta --paging=never";
-        };
+        }];
         truncateCopiedCommitHashesTo = 40;
       };
       gui = {

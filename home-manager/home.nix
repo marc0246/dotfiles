@@ -1,6 +1,7 @@
 { inputs, outputs, config, lib, pkgs, ... }: {
   imports = [
     ./programs/bat.nix
+    ./programs/delta.nix
     ./programs/firefox.nix
     ./programs/fish.nix
     ./programs/git.nix

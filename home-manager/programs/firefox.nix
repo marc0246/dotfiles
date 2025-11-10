@@ -4,7 +4,7 @@
     policies.DisplayMenuBar = "never";
     profiles.default = {
       extensions = {
-        packages = with inputs.firefox-addons.packages.${pkgs.system}; [
+        packages = with inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system}; [
           bitwarden
           clearurls
           decentraleyes
