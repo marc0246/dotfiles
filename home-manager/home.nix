@@ -68,6 +68,10 @@
 
     [profile.rust-analyzer]
     inherits = "dev"
+
+    [profile.release]
+    lto = "thin"
+    codegen-units = 1
   '';
 
   gtk = {
