@@ -27,9 +27,14 @@ in {
           rust-analyzer.imports.prefix = "self";
         };
       };
+      language-server.typos-lsp = {
+        command = "${pkgs.typos-lsp}/bin/typos-lsp";
+        config.diagnosticSeverity = "Warning";
+      };
       language = [
         {
           name = "rust";
+          language-servers = [ "rust-analyzer" "typos-lsp" ];
           debugger = {
             name = "lldb-dap";
             transport = "stdio";
