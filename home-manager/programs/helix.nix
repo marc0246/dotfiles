@@ -34,6 +34,7 @@ in {
       language = [
         {
           name = "rust";
+          diagnostic-severity = "warning";
           language-servers = [ "rust-analyzer" "typos-lsp" ];
           debugger = {
             name = "lldb-dap";
