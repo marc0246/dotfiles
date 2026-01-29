@@ -76,6 +76,8 @@
 
   programs.fish.enable = true;
 
+  programs.steam.enable = true;
+
   programs.sway.enable = true;
 
   security.polkit.enable = true;
