@@ -19,6 +19,7 @@
   home.packages = with pkgs; [
     alacritty
     anki
+    cargo-flamegraph
     clang
     coreutils
     discord
