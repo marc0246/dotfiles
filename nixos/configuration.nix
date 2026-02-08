@@ -38,13 +38,6 @@
 
   hardware.graphics.enable = true;
 
-  hardware.nvidia = {
-    modesetting.enable = true;
-    open = false;
-    package = config.boot.kernelPackages.nvidiaPackages.latest;
-    powerManagement.enable = false;
-  };
-
   networking = {
     firewall.enable = false;
     hostName = "nixos";
@@ -91,8 +84,6 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  services.xserver.videoDrivers = [ "nvidia" ];
 
   time.timeZone = "Europe/Vienna";
   i18n.defaultLocale = "en_US.UTF-8";
