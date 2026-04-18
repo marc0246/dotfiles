@@ -100,14 +100,26 @@
             | tail -n 1 \
             | cut -d ' ' -f 4 \
             | wl-copy -n'';
+        "${modifier}+Control+k" = "mode keyboard";
       };
       window = {
         border = 1;
         hideEdgeBorders = "both";
       };
 
+      modes = {
+        keyboard = {
+          "u" = "input type:keyboard xkb_switch_layout 0; mode default";
+          "d" = "input type:keyboard xkb_switch_layout 1; mode default";
+          "s" = "input type:keyboard xkb_switch_layout 2; mode default";
+          "Escape" = "mode default";
+          "Return" = "mode default";
+        };
+      };
+
       input = {
         "type:keyboard" = {
+          xkb_layout = "us,de,sk";
           xkb_options = "caps:swapescape,altwin:swap_alt_win";
           xkb_numlock = "enabled";
         };
