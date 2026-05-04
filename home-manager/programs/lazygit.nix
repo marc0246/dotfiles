@@ -6,7 +6,7 @@
         autoForwardBranches = "none";
         pagers = [{
           colorArg = "always";
-          pager = "${pkgs.delta}/bin/delta --paging=never";
+          pager = "${lib.getExe (pkgs.delta)} --paging=never";
         }];
         truncateCopiedCommitHashesTo = 40;
       };

@@ -28,7 +28,7 @@ in {
         };
       };
       language-server.typos-lsp = {
-        command = "${pkgs.typos-lsp}/bin/typos-lsp";
+        command = "${lib.getExe (pkgs.typos-lsp)}";
         config.diagnosticSeverity = "Warning";
       };
       language = [
@@ -39,7 +39,7 @@ in {
           debugger = {
             name = "lldb-dap";
             transport = "stdio";
-            command = "${pkgs.lldb}/bin/lldb-dap";
+            command = "${lib.getExe (pkgs.lldb)}";
             templates = [
               {
                 name = "binary";

@@ -45,7 +45,7 @@
         hiddenState = "hide";
         mode = "dock";
         position = "top";
-        statusCommand = "${pkgs.i3status}/bin/i3status";
+        statusCommand = "${lib.getExe (pkgs.i3status)}";
         trayOutput = "primary";
         workspaceButtons = true;
         workspaceNumbers = true;

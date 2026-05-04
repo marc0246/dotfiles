@@ -53,9 +53,9 @@
     target-dir = "${config.home.homeDirectory}/.cargo/target"
 
     [target.x86_64-unknown-linux-gnu]
-    linker = "${pkgs.clang}/bin/clang"
+    linker = "${lib.getExe (pkgs.clang)}"
     rustflags = [
-      "-Clink-arg=-fuse-ld=${pkgs.mold}/bin/mold",
+      "-Clink-arg=-fuse-ld=${lib.getExe (pkgs.mold)}",
       "-Clink-arg=-Wl,--no-rosegment",
       "-Ctarget-cpu=native",
     ]
