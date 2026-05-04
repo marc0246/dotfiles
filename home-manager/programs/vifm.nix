@@ -32,13 +32,21 @@
 
       if $WAYLAND_DISPLAY != ""
         if executable('wl-copy')
-          nnoremap yd :!echo -n %d | wl-copy %i && echo -n %d | wl-copy -p %i<cr>
-          nnoremap yf :!echo -n %c:p | wl-copy %i && echo -n %c:p | wl-copy -p %i<cr>
+          nnoremap yd :!echo -n %d | wl-copy %i<cr>
+          nnoremap yf :!echo -n %c:p | wl-copy %i<cr>
+          nnoremap ym :!${lib.getExe (pkgs.writeScriptBin "wl-copy-mime-type.fish" ''
+            #!/usr/bin/env fish
+            string join \nfile:// "" $argv[1..] | wl-copy -t text/uri-list
+          '')} %f:p %i<cr>
         endif
       elseif $DISPLAY != ""
         if executable('xclip')
           nnoremap yd :!echo -n %d | xclip -selection clipboard %i<cr>
           nnoremap yf :!echo -n %c:p | xclip -selection clipboard %i<cr>
+          nnoremap ym :!${lib.getExe (pkgs.writeScriptBin "xclip-copy-mime-type.fish" ''
+            #!/usr/bin/env fish
+            string join \nfile:// "" $argv[1..] | xlip -selection clipboard -t text/uri-list
+          '')} %c:p %i<cr>
         endif
       endif
 
