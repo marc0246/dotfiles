@@ -1,6 +1,7 @@
 { inputs, outputs, config, lib, pkgs, ... }: {
   programs.firefox = {
     enable = true;
+    configPath = "${config.home.homeDirectory}/.mozilla/firefox";
     policies.DisplayMenuBar = "never";
     profiles.default = {
       extensions = {
