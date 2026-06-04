@@ -4,14 +4,16 @@
   system.stateVersion = "24.11";
 
   boot = {
-    loader = {
-      systemd-boot.enable = true;
-      efi.canTouchEfiVariables = true;
-    };
     initrd.luks.devices.cryptlvm = {
       device = "/dev/disk/by-uuid/60049681-51bc-4d65-bde2-bcdfff045e8b";
       bypassWorkqueues = true;
     };
+    kernelParams = [ "mem_sleep_default=deep" ];
+    loader = {
+      systemd-boot.enable = true;
+      efi.canTouchEfiVariables = true;
+    };
+    resumeDevice = "/dev/disk/by-uuid/fd3689dc-10cd-411f-8d3a-adf2cfef4f82";
   };
 
   console = {
@@ -69,6 +71,11 @@
 
   programs.fish.enable = true;
 
+  services.logind.settings.Login = {
+    IdleAction = "suspend-then-hibernate";
+    IdleActionSec = "10m";
+  };
+
   programs.steam.enable = true;
 
   programs.sway.enable = true;
@@ -83,6 +90,12 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+  };
+
+  systemd.sleep.settings.Sleep = {
+    SuspendState = "mem";
+    HibernateMode = "shutdown";
+    HibernateDelaySec = "20m";
   };
 
   time.timeZone = "Europe/Vienna";
