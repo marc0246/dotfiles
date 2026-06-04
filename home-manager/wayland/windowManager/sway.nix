@@ -38,14 +38,17 @@
           };
         };
         fonts = {
-          names = [ "FiraCode" ];
+          names = [ "FiraCode" "Symbols Nerd Font Mono" ];
           size = 9.5;
           style = "Medium";
         };
         hiddenState = "hide";
         mode = "dock";
         position = "top";
-        statusCommand = "${lib.getExe (pkgs.i3status)}";
+        statusCommand = let
+          exe-path = lib.getExe (pkgs.i3status-rust);
+          config-path = "${config.xdg.configHome}/i3status-rust/config-default.toml";
+        in "${exe-path} ${config-path}";
         trayOutput = "primary";
         workspaceButtons = true;
         workspaceNumbers = true;
@@ -119,7 +122,7 @@
 
       input = {
         "type:keyboard" = {
-          xkb_layout = "us,de,sk";
+          xkb_layout = "us,at,sk";
           xkb_options = "caps:swapescape,altwin:swap_alt_win";
           xkb_numlock = "enabled";
         };

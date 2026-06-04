@@ -6,6 +6,7 @@
     ./programs/fish.nix
     ./programs/git.nix
     ./programs/helix.nix
+    ./programs/i3status-rust.nix
     ./programs/kitty.nix
     ./programs/lazygit.nix
     ./programs/vifm.nix
