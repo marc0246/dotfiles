@@ -131,6 +131,10 @@
           pointer_accel = "-0.5";
         };
       };
+
+      output = {
+        "*".bg = "${config.xdg.configHome}/sway/wallpaper.jpg fill #000000";
+      };
     };
   };
 }

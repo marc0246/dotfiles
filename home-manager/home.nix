@@ -50,6 +50,9 @@
     zip
   ];
 
+  # This wallpaper was downloaded from https://wallpaperaccess.com/blurry-lights.
+  home.file."${config.xdg.configHome}/sway/wallpaper.jpg".source = ../assets/wallpaper.jpg;
+
   home.file."${config.home.homeDirectory}/.cargo/config.toml".text = ''
     [build]
     target-dir = "${config.home.homeDirectory}/.cargo/target"
