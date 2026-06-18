@@ -12,6 +12,7 @@
       "ctrl+l" = "next_tab";
       "kitty_mod+h" = "move_tab_backward";
       "kitty_mod+l" = "move_tab_forward";
+      "kitty_mod+n" = "copy_ansi_to_clipboard";
     };
     settings = with outputs.lib.palette; {
       active_tab_foreground = gray77;
