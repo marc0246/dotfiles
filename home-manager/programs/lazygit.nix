@@ -4,9 +4,9 @@
     settings = {
       git = {
         autoForwardBranches = "none";
-        pagers = [{
+        diffRenderers = [{
           colorArg = "always";
-          pager = "${lib.getExe (pkgs.delta)} --paging=never";
+          command = "${lib.getExe (pkgs.delta)} --paging=never";
         }];
         truncateCopiedCommitHashesTo = 40;
       };
