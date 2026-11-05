@@ -4,7 +4,7 @@
     config = rec {
       defaultWorkspace = "workspace number 1";
       modifier = "Mod4";
-      terminal = "kitty -1 --instance-group global";
+      terminal = "kitty";
 
       bars = [{
         colors = with outputs.lib.palette; {
