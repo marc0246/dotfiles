@@ -22,6 +22,7 @@
     anki
     cargo-expand
     cargo-flamegraph
+    cargo-nextest
     clang
     coreutils
     discord
