@@ -60,6 +60,7 @@ in {
     settings = {
       theme = "city-lights";
       editor = {
+        auto-info = false;
         auto-pairs = false;
         bufferline = "always";
         color-modes = true;
